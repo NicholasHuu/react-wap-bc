@@ -1,0 +1,83 @@
+.bbin-banner {
+  img {
+    width: 100%;
+  }
+}
+.page-bbin{
+  .bbin-items .bbin-item{
+    height: 6rem;
+    line-height: 6rem;
+  }
+}
+.bbin-items {
+
+  position: relative;
+  margin-top: 1rem;
+  > .inner {
+    @include clearfix;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+  }
+
+  &:after {
+    content: " ";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    background: #d5d5d5;
+  }
+
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0px;
+    right: auto;
+    top: 50%;
+    background: #d5d5d5 ;
+  }
+  
+  .bbin-item {
+    width: 50%;
+    float: left;
+    background-color: #fff;
+    color: #cdccca;
+    text-align: center;
+    position: relative;
+    .inner {
+      position: relative;
+      padding-left: 30%;
+      .img{
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        width: 4rem;
+        height: 4rem;
+        img{
+          width: 100%;
+        }
+      }
+      h3 {
+        
+        color: #4a4a4a;
+      }
+
+    }
+  }
+  
+
+}
+
+.bbin-body {
+  background: #eee;
+}
+.cards:after{
+  background: #eaeaea;
+}
+.cards .inner{
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}

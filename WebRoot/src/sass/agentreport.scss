@@ -1,0 +1,349 @@
+
+.agentreport-body {
+  background: #f5f5f5;
+
+  #application {
+    background: #fff;
+  }
+}
+
+.agentreport-card {
+  &.card-template {
+    .inner {
+      
+      padding: 0px;
+      border-bottom: 5px solid #eee;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        background: url(../misc/images/agentreport/right-arrow.png);
+        right: 2rem;
+        top: 50%;
+        margin-top: -1rem;
+        background-size: 100%;
+      }
+
+      img {
+        float: none;
+        vertical-align: middle;
+        float: none;
+        display: inline-block;
+      }
+      .right {
+        display: inline-block;
+        margin-left: 2rem;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.member-row {
+  width: 100%;
+  font-size: 1rem;
+  border-bottom: 1px solid #eaeaea;
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #b3b3b3;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all .3s ease;
+
+    &.arrow-down-down {
+      transform: rotate(90deg);
+    }
+  }
+
+  .radius {
+    background: #0ba2ea;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  tr {
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  tr:first-child {
+    color: #808080;
+
+    td:first-child {
+      vertical-align: middle;
+    }
+
+    td:last-child {
+      vertical-align: middle;
+    }
+  }
+
+  tr:last-child {
+    color: #3e3e3e;
+    font-size: 1.1rem;
+  }
+
+}
+
+.member-finace {
+  width: 100%;
+  
+  thead {
+    background-color: #c1c1c1;
+    color: #fff;
+  }
+  
+  td, th {
+    text-align: center;
+    padding: .5rem 0px;
+    border: 1px solid #a8a8a8;
+
+    &.no-padding {
+      padding: 0px;
+    }
+  }
+
+  td {
+    table {
+      width: 100%;
+
+      tr {
+
+        td {
+          width: 50%;
+          border: none;
+        }
+      }
+
+    }
+  }
+
+  tbody {
+    background: #eeeeee;
+    color: #8c8c8c;
+  }
+}
+
+.funds-wrapper {
+
+  .date-el {
+    padding: 1rem 3rem;
+
+    .datetime-picker {
+      text-align: center;
+    }
+  }
+
+  .platform-items {
+    
+    .platform {
+      @include clearfix;
+
+      display: block;
+      padding: 1rem 2rem 1rem 3rem;
+      border-bottom: 1px solid #e7e7e7;
+
+      .name {
+        float: left;
+        height: 26px;
+        line-height: 26px;
+        font-size: 1.3rem;
+        color: #474546;
+      }
+
+      .btn-small {
+        float: right;
+        padding: 0.5rem 1.2rem;
+        background: #0093dd;
+        color: #fff;
+      }
+    }
+
+  }
+
+}
+
+.funds-summary {
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    &:first-child {
+      border-bottom: none;
+    }
+  }
+
+  thead {
+    background: #dededc;
+    color: #757573;
+  }
+  
+  table,tr,td, th  {
+    border: 1px solid #d5d5d5;
+  }
+
+  th, td {
+    padding: 0.5rem 0px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  td {
+    padding: 1.2rem 0px;
+  }
+
+}
+
+.funds-detail-con {
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table,tr,td {
+    border: 1px solid #f5f5f5;
+
+    tr {
+      td:nth-child(1) {
+        width: 33.33%;
+        text-align: right;  
+        padding-right: 1rem;
+      }
+
+      td:nth-child(2) {
+        text-align: left;
+        padding-left: 1rem;
+      }
+      
+    }
+  }
+
+  td {
+    padding: 1.3rem 0px;
+  }
+}
+
+.proxy-body {
+  
+  .proxy-content {
+
+    .help-text {
+      padding: 1rem 2rem 0px 1rem;
+      background: #f5f5f5;
+      color: #9a9a9a;
+    }
+
+    border-top: 1rem solid #f5f5f5;
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      tr {
+        td:nth-child(1) {
+          text-align: right;
+          padding-right: 1rem;
+          background-color: #dededc;
+          width: 33.33%;
+        }
+
+        td:nth-child(2) {
+          text-align: left;
+          padding-left: 1rem;
+          color: #9b9b9b;
+        }
+      }
+
+      td {
+      border: 1px solid #c3c3c3;
+      padding: 1rem 0px;
+      }
+    }
+  }
+
+  .proxy-header {
+    padding: 0px 3rem;
+
+    li {
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: .8rem 0px;
+
+      &.active {
+        
+        border-bottom: 2px solid #0093d9;
+    
+        p {
+          color: #0093d9;
+        }
+      }
+
+      p {
+        font-size: 1.3rem;
+        color: #a4a4a4;
+      }
+    }
+  }
+  
+  .proxy-algorithm {
+    background: #f5f5f5;
+    padding: 2rem 2rem 0px 2rem;
+    color: #616161;
+
+    h3 {
+      line-height: 3rem;
+      font-size: 1.1rem;
+      color: #5d5d5d;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 150%;
+
+      &.grapha {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+}
+
+.no-member {
+  padding: 1rem 2rem;
+  background: #f5f5f5;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.top-bar-header {
+  &.agentreport-header {
+    background-color: #0093dd;
+    color: #fff;
+  }
+}
+
+.agentreport-con {
+  padding-top: 3.7rem;
+}

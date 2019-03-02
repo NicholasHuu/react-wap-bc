@@ -1,0 +1,387 @@
+.pure-g{
+  padding-bottom: 2px;
+
+}
+.ui-item-son-ball{
+  line-height: 2.3rem;
+}
+.ui-item-son {
+  
+  &.active {
+    background: #c1c1c1;
+    color: #ff0303;
+  }
+  
+  height: 2.2rem;
+  line-height: 2.2rem;
+
+  &.ui-item-son-ball {
+    background: #f5f5f5;
+  }
+
+  .peiyu {
+    background: #a9a9a9;
+    border-radius: .4rem;
+    color: #fff;
+    width: 3.5rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    display: inline-block;
+    font-size: 1.18rem;
+    vertical-align: middle;
+
+    &.tiny {
+      font-size: 14px;
+    }
+
+    &.selected {
+      background: #b82432;
+    }
+  }
+
+  .peiyu-radius {
+    border-radius: 2rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    vertical-align: inherit;
+    background: #fff;
+    border: 1px solid #777;
+    color: #000;
+
+    &.selected {
+      color: #fff;
+      border: 1px solid #eee;
+    }
+  }
+}
+
+.table4-body {
+  padding-bottom: 5rem;
+}
+
+.member-bet-item {
+  .label {
+
+    span {
+      margin-right: .5rem;
+      display: inline-block;
+    }
+  }
+}
+
+.switch-board-content {
+  position: absolute;
+  z-index: 11;
+  background: #eaeaea;
+  width: 100%;
+  padding: 1.33rem;
+  box-sizing: border-box;
+  color: #898989;
+  
+  li {
+    margin-bottom: .8rem;
+    > .pankou{
+      display: inline-block;
+      position: relative;
+      padding-left: 1rem;
+      color: #393939;
+      font-size: .9rem;
+      &:after{
+        content: "";
+        position: absolute;
+        top: .25rem;
+        left: 0;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background:#393939;
+      }
+    }
+  }
+  
+  .sub-pankou {
+
+    .sb-item {
+      border: 1px solid #393939;
+      height: 1.67rem;
+      width: 6.67rem;
+      display: inline-block;
+      margin-right: 1rem;
+      text-align: center;
+      line-height: 1.67rem;
+      margin-top: .8rem;
+      color: #393939;
+      &.active {
+        border: 1px solid #b82432;
+        background: #b82432;
+        color: #fff;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    span.pankou {
+
+    }
+  }
+}
+
+@mixin color-red {
+  color: #e81c1c;
+}
+
+@mixin color-green {
+  color: #048633;
+}
+
+@mixin color-blue {
+  color: #0e09c3;
+}
+
+span[class*="RED"], 
+div[class*="RED"] {
+  @include color-red;
+}
+
+span[class*="GREEN"],
+div[class*="GREEN"] {
+  @include color-green;
+}
+
+span[class*="BLUE"],
+div[class*="BLUE"] {
+  @include color-blue;
+}
+
+.group-title {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  padding-left: 1rem;
+  letter-spacing: 1px;
+  background: #dadada;
+  text-align: center;
+  color: #fff;
+}
+
+.table4-column {
+  text-align: left;
+
+  .ui-item-son {
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+}
+.ball-margin-right .ball{
+  margin-right: .2rem;
+}
+.member-bet-items{
+  .inner{
+    padding-bottom: 4rem;
+  }
+}
+.preorder-items{
+  border:1px solid #979596;
+  border-bottom: none;
+  .preorder-item {
+    background: #fff;
+    color: #fff;
+    border-bottom: 1px solid #979596;
+    font-size: 1rem;
+    p{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: #000;
+    }
+    span {
+      display: inline-block;
+      margin-right: .4rem;
+      line-height: 2rem;
+      text-align: center;
+      &:first-child{
+        width: 5rem;
+        border-right: 1px solid #979596;
+        margin-right: 2rem;
+      }
+      &:last-child{
+        color: #db140d;
+      }
+    }
+  }
+}
+.inline-article {
+  display: inline-block;
+}
+
+.bet-table-wrap-kaijiang {
+  @extend .bet-table-wrap-disabled;
+  .table4-column {
+    
+  }
+
+  &:before {
+    background-image: url(../misc/images/kj-icon.png) !important;
+  }
+}
+
+.bet-table-wrap-disabled {
+
+  &:before {
+    content:"";
+    display: block;
+    position: absolute;
+    background: url(../misc/images/fenpan-icon.png);
+    width: 10rem;
+    height: 10rem;
+    top: 10rem;
+    left: 50%;
+    margin-left: -5rem;
+    z-index: 1111;
+    background-size: 100%;
+  }
+
+  &:after {
+    content: "\5C01\76D8\4E2D";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(224, 224, 224, 0.48);
+    text-align: center;
+    line-height: 15rem;
+    color: #e0e0e0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-indent: -10000rem;
+    overflow: hidden;
+  }
+
+  .table4-column {
+    position: relative;
+  }
+}
+
+.lottery-page {
+  .lottery-header {
+    .top-bar-header {
+
+      &.lottery-home {
+        h3 {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+  
+  .maintain {
+    top: 5rem;
+    background: url(../misc/images/wh-icon.png);
+    background-size: 100%;
+    width: 10rem;
+    height: 10rem;
+    left: 50%;
+    margin-left: -5rem;    
+    overflow: hidden;
+    text-indent: -10000rem;
+  }
+}
+
+.swiper-tab-con {
+  overflow: hidden;
+
+  .swiper-wrapper {
+    transition-property: left;
+  }
+}
+
+.color-red {
+  color: #b82432;
+}
+
+.lottery-bet-page {
+  .member-info {
+    padding-top: 0px;
+  }
+}
+
+.seperator {
+  span {
+    display: inline-block;
+    margin-right: .3rem;
+  }
+}
+
+h2.gamecode {
+  color: #fff;
+  position: absolute;
+  left: 3rem;
+  height: 1.4rem;
+  top: 50%;
+  margin-top: -.4rem;
+}
+
+.loading-more {
+  text-align: center;
+  background: #d6d5d5;
+  color: #737373;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.head-2_2 .ui-item-son {
+  background: #8a8a8a;
+  color: #fff;
+}
+
+.lottery-btn.sport-btn {
+  background: #b82432;
+}
+
+.bet-bottom-btn {
+  .cancel-btn {
+    span {    
+      position: relative;
+      display: inline-block;
+      padding-left: 2.5rem;
+      &:before {
+        display: block;
+        content: "";
+        width: 1.43rem;
+        height: 1.43rem;
+        background-image: url(../misc/images/lottery/cancel-icon.png);
+        background-size: 90%;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 2rem;
+        top: 46%; 
+        margin-top: -.7rem;
+        margin-left: -2rem;
+      }
+    }
+  }
+
+  .ok-btn {
+    @extend .cancel-btn;
+
+    span {
+
+      &:before {
+        background-image: url(../misc/images/lottery/ok-icon.png);
+      }
+    }
+  }
+} 
+
+.ui-item-son.ui-header {
+  background: #c1c1c1;
+  color: #fff;
+}

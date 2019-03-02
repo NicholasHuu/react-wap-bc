@@ -1,0 +1,46 @@
+@media all and (max-width: 320px)  {
+  
+  html, body {
+    font-size: 12px; 
+  }
+
+  .tlottery-play-page {
+    .numbers-wrap {
+      
+      .tip {
+        font-size: 12px;
+      }
+
+    }
+
+    .shake-el p.tip-how {
+      font-size: 12px;
+    }
+
+    .numbers-wrap .nums-group .right {
+      padding-left: 5.5rem;
+    }
+
+    .tlottery-header .arrow-down {
+      margin-left: 0px;
+    }
+
+  }
+
+  .template-type .inner {
+    padding: 0 .5rem;
+  }
+
+}
+
+@media (min-width: 321px) and (max-width: 375px)  {
+  html, body {
+    font-size: 13px; 
+  }
+}
+
+@media (min-width: 375px) and (max-width: 414px)  {
+  html, body {
+    font-size: 14px; 
+  }
+}

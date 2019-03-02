@@ -1,0 +1,2121 @@
+.tlottery-marquee {
+  .marquee-icon {
+    i {
+      background: #df2035;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  .ui-marquee {
+    margin-left: 1rem;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .arrow-icon {
+    display: none;
+  }
+
+}
+
+.tlottery-page {
+  padding-bottom: 5rem;
+}
+
+body.tlottery {
+  background: #f5f5f5;
+  width: 100%;
+  overflow-x: hidden;
+
+  #application {
+    background: #fff;
+  }
+}
+
+body.view-slide-menu {
+  overflow-y: hidden;
+}
+
+.tl-items {
+
+  border-top: 1rem solid #f5f5f5;
+  @include clearfix;
+
+  > .card-template {
+    width: 50%;
+    float: left;
+
+    &:nth-child(odd) {
+      border-right: 1px solid #f5f5f5;
+    }
+
+    .inner {
+      img {
+        width: 30%;
+        vertical-align: middle;
+        float: none;
+        display: inline-block;
+      }
+    }
+
+    .right {
+      margin-left: 2%;
+      vertical-align: middle;
+      float: none;
+      display: inline-block;
+      width: 68%;
+    }
+  }
+}
+
+.tlottery-header {
+  background-color: #ff7701;
+  color: #fff;
+
+  p {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 3.44rem;
+    
+    &:before {
+      display: inline-block;
+      height: 100%;
+      content: "";
+      vertical-align: middle;
+    }
+  }
+
+  .arrow-down {
+    background: url(../misc/images/tlottery/arrow-down.png);
+    width: 20px;
+    height: 11px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100%;
+    margin-left: 10px;
+    transition: all .3s ease;
+
+    &.view {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.pankou-switcher-wrap {
+
+  box-sizing: border-box;
+  margin-right: -4%;
+  overflow: hidden;
+  width: 100%;
+  min-height: 150px;
+
+  $leftWidth: 7rem;
+
+  .left {
+    width: $leftWidth;
+    float: left;
+    padding-bottom: 500rem;
+    margin-bottom: -500rem;
+    background: #dbdbdb;
+
+    li {
+      padding: 10px 0px;
+      text-align: center;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #c8c8c8;
+
+      &.active {
+        background: #ebebeb;
+      }
+    }
+  }
+
+  .right{
+    padding-left: $leftWidth + .5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 1rem;
+  }
+
+  .pankou-item {
+    width: 46%;
+    float: left;
+    text-align: center;
+    border-radius: .5rem;
+    border: 1px solid #dddddd;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    margin-right: 4%;
+    color: #666;
+    margin-bottom: 1.2rem;
+
+    &.active {
+      background: url(../misc/images/tlottery/pk-active.png);
+      background-repeat: no-repeat;
+      background-size: 20px;
+      background-position: 104% 103%;
+      border: 1px solid #ff7701;
+      box-sizing: border-box;
+      color: #ff7701;
+    }
+  }
+}
+
+.ps-wrap {
+  position: fixed;
+  top: 3.7rem;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity .3s ease;
+  z-index: 5;
+
+  .view-bg {
+    visibility: hidden;
+    position: fixed;
+    background: rgba(0,0,0, .2);
+    width: 100%;
+    z-index: 5;
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+.ps-wrap.view {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+
+  .view-bg {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .pankou-switcher-wrap {
+    background: #fff;
+  }
+}
+
+.quick-view-wrap {
+
+  position: absolute;
+  top: 3.7rem + 2.5rem;
+  background: #fff;
+  z-index: 2;
+  width: 100%;
+
+  .intro {
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  &.quick-view-wrap-k3 {
+    table {
+
+      td {
+        span {
+          display: inline-block;
+          background-size: 100%;
+          width: 2rem;
+          height: 2rem;
+          overflow: hidden;
+          text-indent: -1000rem;
+
+          &[data-num="1"] {
+            background-image: url(../misc/images/tlottery/o1.png);
+          }
+
+          &[data-num="2"] {
+            background-image: url(../misc/images/tlottery/o2.png);
+          }
+
+          &[data-num="3"] {
+            background-image: url(../misc/images/tlottery/o3.png);
+          }
+
+          &[data-num="4"] {
+            background-image: url(../misc/images/tlottery/o4.png);
+          }
+
+          &[data-num="5"] {
+            background-image: url(../misc/images/tlottery/o5.png);
+          }
+
+          &[data-num="6"] {
+            background-image: url(../misc/images/tlottery/o6.png);
+          }
+        }
+
+        &:first-child {
+          span {
+            text-indent: 0rem;
+          }
+        }
+      }
+
+    }
+  }
+
+  .timer {
+    color: #ff7701;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr:nth-child(odd) {
+      background-color: #f6f5f1;
+    }
+
+    td {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666666;
+      padding: .7rem 0px;
+      border: 1px solid #dfdede;
+      vertical-align: middle;
+
+      span {
+        color: #0004c2;
+        margin: 0px .5rem;
+        &.choseEle{
+          color: #ee1f3b;
+        }
+        &.opening-text {
+          color: #999999;
+        }
+      }
+    }
+
+    td:nth-child(1){
+      width: 16%;
+    }
+
+    td:nth-child(2) {
+      width: 52%;
+    }
+    td:nth-child(3) {
+      width: 16%;
+    }
+    td:nth-child(4) {
+      width: 16%;
+    }
+  }
+}
+
+.drag-el {
+  background: url(../misc/images/tlottery/drag-bg.png);
+  width: 11rem;
+  height: 2.5rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0px auto .5rem auto;
+  position: fixed;
+  left: 50%;
+  margin-left: -5.5rem;
+  z-index: 4;
+  top: 3.7rem + 2.5rem;
+
+  .arrow-down {
+    position: absolute;
+    width: 2rem;
+    height: .8rem;
+    background: url(../misc/images/tlottery/drag-arrow-down.png);
+    top: 50%;
+    margin-top: -.8rem;
+    left: 50%;
+    margin-left: -1rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.shake-el {
+  font-size: 1.1rem;
+  .icon-shake {
+    background: url(../misc/images/tlottery/shake-bg.png);
+    width: 2rem;
+    display: inline-block;
+    height: 2rem;
+    vertical-align: middle;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  p {
+    display: inline-block;
+    margin-left: 1rem;
+    color: #666666;
+
+    &.tip-how {
+      float: right;
+      margin-top: .7rem;
+      font-size: 14px;
+      text-decoration: underline;
+
+      &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../misc/images/tlottery/icon-how.png);
+        display: inline-block;
+        background-size: 100%;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+
+    &.shake-flag {
+      margin-left: 0px;
+      display: inline-block;    
+      border-radius: 20px;
+      border: 1px solid #e2e4de;
+      padding: 6px 20px;
+      background: #f9f9f9;
+      font-size: 1.2rem;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .5rem;
+      }
+    }
+  }
+}
+
+.numbers-wrap {
+  box-sizing: border-box;
+  background: #f3f3f3;
+  position: absolute;
+  top: 3.7rem + 2.5rem;
+  z-index: 3;
+  padding-top: 2rem;
+  width: 100%;
+
+  > .wrap {
+    padding: 0px 1rem 10rem 1rem;
+    min-height: 430px;
+  }
+  
+  @mixin basesize {
+    font-size: 1.1rem;
+    margin: 10px 0px;
+    text-align: center;
+    width: 37px;    
+    height: 32px;
+    line-height: 32px;
+  }
+
+
+  .tip {
+    margin: 1rem 0px;
+    font-size: 14px;
+    text-align: left;
+    position: relative;
+
+    .toggle-view-yl {
+      position: absolute;
+      top: -2px;
+      right: 0px;
+
+      .switch {
+        margin-left: .5rem;
+      }
+    }
+
+    .red {
+      color: #ff7701;
+    }
+  }
+  
+  .nums-group {
+
+    .nums-item {
+      position: relative;
+    }
+
+    .left {
+      width: 5rem;
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      .name {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        background: url(../misc/images/tlottery/num-name-bg.png);
+        @include basesize;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        color: #666666;
+        width: 100%;
+        text-indent: -5px;
+
+        &.disable {
+          visibility: hidden;
+        }
+      }
+    }
+
+    .right {
+      display: inline-block;
+      width: 100%;
+      padding-left: 6.5rem;
+      box-sizing: border-box;
+
+      &.es_es_ebt {
+
+        span.sz {
+          width: 42px;
+          height: 42px;
+        }
+
+      }
+
+      &.ds_ds_dtys {
+        
+        span.sz {
+          width: 59px;
+          height: 59px;
+        }
+
+      }
+
+      &.dxds_dxds_hzdxds  {
+        
+        margin-left: 43px !important;
+        
+        .num-el {
+          margin-right: 4rem !important;
+        }
+
+        .num {
+          width: 6.5rem !important;
+        }
+      }
+
+      &.dxds_dxds_hwdxds {
+        @extend .dxds_dxds_hzdxds
+      }
+
+      span.sz {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        line-height: 35px;
+        overflow: hidden;
+        text-indent: -1000rem;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        &.sz-1 {
+          background-image: url(../misc/images/tlottery/1s.png);
+        }
+        &.sz-2 {
+          background-image: url(../misc/images/tlottery/2s.png);
+        }
+        &.sz-3 {
+          background-image: url(../misc/images/tlottery/3s.png);
+        }
+        &.sz-4 {
+          background-image: url(../misc/images/tlottery/4s.png);
+        }
+        &.sz-5 {
+          background-image: url(../misc/images/tlottery/5s.png);
+        }
+        &.sz-6 {
+          background-image: url(../misc/images/tlottery/6s.png);
+        }
+      }
+
+      &.sz-right {
+        
+        .num-el {
+
+          .view-num {
+            display: block;
+            padding: 0px 3px;
+            box-sizing: border-box;
+          }
+
+          &.active {
+
+            .num {
+              border: none !important;
+              background-color: #b90f0f !important;
+            }
+
+          }
+          
+          .num {
+            width: auto;
+            padding: 0px;
+            border: none;
+            background: inherit;
+          }
+
+        }
+
+      }
+
+      &.ss_ss_sth {
+        
+      }
+
+      &.k3 {
+        padding-left: 0px;
+        display: block;    
+        text-align: left;
+        margin-left: 15px;
+        padding-bottom: 2rem;
+        @include clearfix;
+
+        .num-el {
+          margin-right: 1rem;
+          float: none;
+          display: inline-block;
+          height: inherit;
+          margin-top: 2rem;
+
+          .num {
+            .view-num {
+              font-size: 20px;  
+            }
+
+            .nc {
+              display: block;
+            }
+
+            .nd {
+              font-size: 1rem;
+              display: block;
+              margin-top: 5px;
+            }
+            
+          }
+
+          &.active {
+
+            .num {
+              color: #666;
+              border: 1px solid transparent;
+            }
+
+            .border {
+              display:block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              border-radius: 5px;
+              border: 2px solid #b90f0f;
+              box-sizing: border-box;
+            }
+          }
+
+          &:last-child {
+
+          }
+        }
+
+        .num {
+          background: #fefdfe;
+          background: -moz-linear-gradient(top, #fefdfe 0%, #e8e7e8 100%);
+          background: -webkit-linear-gradient(top, #fefdfe 0%, #e8e7e8 100%);
+          background: linear-gradient(to bottom, #fefdfe 0%, #e8e7e8 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdfe', endColorstr='#e8e7e8',GradientType=0 );
+          border-radius: 5px;
+          color: #666;
+          width: 3.5rem;
+          padding: 17px 9px;
+          border: 1px solid #c7c7c7;
+          line-height: inherit;
+          height: auto;
+          margin: 0px 0px;
+        }
+      }
+
+      &.quick-nums { 
+
+        .num {
+          border-radius: 0px;
+          color: #b8b8b8;
+
+          &.active {
+            color: #fff;
+            background: #ee1f3b;
+          }
+        }
+
+      }
+
+      .num-el {
+        float: left;
+        margin-right: .5rem;
+        position: relative;
+        height: 32px + 30px + 10px + 10px; 
+        /*height: 32px + 10px + 10px; 暂时没有遗漏*/
+
+        &.num-el-2 {
+
+          .num {
+            width: 50px;
+            border-radius: 8px;
+          }
+        }
+
+        &.num-el-3 {
+
+        }
+
+        &.hide-yl {
+          height: 32px + 10px + 10px;
+
+          .yl {
+            display: none;
+          }
+        }
+
+        &.active {
+          .num {
+            background-color: #ee1f3b;
+            color: #fff;
+          }
+
+          .yl {
+            background: inherit;
+            color: #999999;
+          }
+        }
+      }
+
+      .num {
+        @include basesize;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        color: #ee1f3b;
+        width: 32px;
+        position: relative;
+
+        .high-num {
+          display: none;
+        }
+
+        &.high {
+          
+          .high-num {
+            background: url(../misc/images/tlottery/highnum-bg.png);
+            display: block;
+            position: absolute;
+            top: -52px;
+            width: 45px;
+            height: 45px;
+            background-size: 100%;
+            padding-bottom: 9px;
+            left: -6px;
+
+            .hn-wrap {
+              width: 32px;
+              height: 32px;
+              line-height: 32px;
+              text-align: center;
+              background: #ee1f3b;
+              display: block;
+              border-radius: 50%;
+              color: #fff;
+              position: relative;
+              left: 7px;
+              top: 6px;
+            }
+          }
+        }
+      }
+
+      .yl {
+        @extend .num;
+        background: inherit;
+        border-radius: 0px;
+        color: #999999;
+      }
+    }
+
+  }
+}
+
+$sliderMenuWidth: 270px;
+
+.tlottery-play-page {
+
+  > .wrapper {
+    transition: all .3s linear;
+    &.active {
+      transform: translatex(-$sliderMenuWidth);
+
+      &:before {
+        content: "";
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+        z-index: 2222;
+      }
+    }
+  }
+
+  .page-body {
+    position: relative;
+  }
+
+  .tlottery-header {
+    h3 {
+      text-align: center;
+      width: 34%;
+      left: 50%;
+      margin-left: -17%;
+      font-size: 1.3rem;
+      margin-top: -.7rem;
+    }
+  }
+
+  .slider-menu {
+    width: $sliderMenuWidth;
+    height: 100%;
+    position: absolute;
+    right: -$sliderMenuWidth;
+    background: transparent;
+    transition: all .3s linear;
+    display: none;
+    z-index: 2224;
+
+    &.active {
+      transform: translateX(-$sliderMenuWidth);
+      display: block;
+    }
+
+    .toggle-icon {
+      background: url(../misc/images/tlottery/radius-arrow-left.png);
+      width: 1.5rem;
+      height: 6rem;
+      position: absolute;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      left: 1px;
+      z-index: 2226;
+      top: 50%;
+      margin-top: -3rem;
+      display: none;
+    }
+
+    .tiny-user-panel {
+      -webkit-scroll-behavior: smooth;
+      scroll-behavior: smooth;
+    }
+
+    .wrapper {
+      background: #f5f5f5;
+    }
+
+    img {
+      width: 2rem;
+    }
+
+    .fund-links {
+
+        ul {
+          display: flex;
+          background: #fff;
+          padding: .5rem 0px;
+
+          li {
+            flex: auto;
+            text-align: center;
+
+            p {
+              margin-top: .5rem;
+            }
+          }
+        }
+    }
+
+    .group-links {
+
+      .group {
+        margin-top: .5rem;
+        background: #fff;
+
+        li {
+          
+          text-indent: 1.2rem;
+          padding: .5rem 0px;
+          border-bottom: 1px solid #ebebeb;
+          position: relative;
+
+          &:after {
+            display: block;
+            position: absolute;
+            width: .8rem;
+            height: 1.5rem;
+            background: url(../misc/images/tlottery/arrow-right.png);
+            content: '';
+            background-size: 100%;
+            background-repeat: no-repeat;
+            right: 1rem;
+            top: 50%;
+            margin-top: -.7rem;
+          }
+
+          img {
+            vertical-align: middle;
+          }
+
+          span {
+            margin-left: 1rem;
+          }
+        }
+      }
+
+    }
+
+    
+    .basic-info {
+      background: url(../misc/images/tlottery/bg-tinymenu.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      padding: 2rem 0px;
+      padding-left: 1rem;
+      background-color: #e88440;
+
+      img {
+        width: 4rem;
+        vertical-align: middle;
+      }
+
+      p {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 1.2rem;
+        margin-left: .6rem;
+
+        span {
+          display: block;
+
+          &:nth-child(2) {
+            margin-top: .5rem;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.lottery-open-info {
+  text-align: center;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1.1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  background: #fff;
+  top: 3.7rem;
+}
+
+.foot-wrap {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  z-index: 5;
+
+  p.win-summary {
+    height: 3rem;
+    line-height: 3rem;
+    background: #fff;
+    font-size: 1.1rem;
+    text-indent: 2rem;
+    &:before {
+      content: " ";
+      display: inline-block;
+      height: .8rem;
+      width: .8rem;
+      background: #ff7701;
+      border-radius: 50%;
+    }
+
+    span.label {
+      margin-left: 0.8rem;
+    }
+
+    span.text {
+      color: #ee1f3b;
+    }
+  }
+    
+  .actions {
+
+    $height: 5rem;
+    $btnWidth: 8rem;
+    
+    height: $height;
+    width: 100%;
+    position: relative;
+    background: #2a2d32;
+    text-align: center;
+
+    .select-summary {
+      height: 5rem;
+      color: #fff;
+      line-height: 5rem;
+    }
+
+    button {
+      width: $btnWidth;
+      text-align: center;
+      position: absolute;
+      left: 0px;
+      height: $height;
+      top: 0px;
+      line-height: $height;
+      z-index: 2;
+      border-radius: 0px;
+      padding: 0px;
+
+      &.btn-random {
+        background: #414247;
+        color: #f3f3f3;
+
+        &.disabled {
+          background: #c3c3c3;
+          color: #888888;
+        }
+      }
+
+      &.btn-submit {
+        background: #ff7701;
+        color: #f3f3f3;
+        right: 0px;
+        left: auto;
+      }
+    }
+
+    &.actions-stop-charse {
+
+      height: auto;
+      background: #fff;
+      border-top: 1px solid #e9e9e9;
+      padding: .5rem 0px;
+
+      > span {
+        color: #999999;
+        vertical-align: middle;
+      }
+
+      .checkbox {
+        vertical-align: middle;
+      }
+
+    }
+
+  }
+
+}
+
+.confirm-summary {
+  text-align: center;
+  height: 5rem;
+  background: #2a2d32;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+
+  span {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
+
+.tlottery-confirm-page {
+  
+  .foot-wrap {
+    
+  }
+
+  .quick-actions {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #f3f3f3;
+
+    li {
+      float: left;
+      width: 23%;
+      text-align: center;
+      font-size: 1rem;
+      height: 2.5rem;
+      background: #fff;
+      line-height: 2.5rem;
+      border-radius: .5rem;
+      border: 1px solid #ebebeb;
+      box-sizing: border-box;
+      margin-right: 2.6%;
+
+      &:last-child {
+        margin-right: 0%;
+      }
+
+      img {
+        width: 1rem;
+
+      }
+    }
+  }
+
+  .confirm-items {
+
+    padding: .5rem;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    position: relative;
+    z-index: 2;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 17px;
+      background: url(../misc/images/tlottery/items-border-bg.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      left: 0px;
+      top: -3px;
+      z-index: 2;
+    }
+  }
+
+  .confirm-item {
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    border-bottom: 3px dashed #f3f3f3;
+
+    &:last-child {
+      border-bottom: none;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 7px;
+        background: url(../misc/images/tlottery/items-bottom-bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        left: 0px;
+        bottom: -6px;
+        z-index: 2;
+      }
+    }
+    
+    .delete {
+      background: url(../misc/images/tlottery/item-delete-icon.png);
+      width: 2rem;
+      height: 2rem;
+      background-size: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      margin-top: -1rem;
+      left: 1rem;
+    }
+
+    .item-content {
+      padding-left: 4rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      box-sizing: border-box;
+
+      .nums {
+        margin-bottom: .8rem;
+        
+        &.gdsyxw {
+          span {
+            margin-right: 0px;
+          }
+        }
+
+        span {
+          color: #ee1f3b;
+          display: inline-block;
+          margin-right: .2rem;
+
+          &.confirm-symbol {
+          }
+        }
+      }
+
+      .bet-con {
+        color: #999999;
+
+        span {
+          margin-right: .2rem; 
+        }
+      }
+    }
+  }
+
+}
+
+.zhui-wrap {
+  @include clearfix;
+  border-top: 2px solid #ebebeb;
+  color: #666666;
+  position: fixed;
+  bottom: 5rem;
+  width: 100%;
+
+  .zhui-field {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #ebebeb;
+    padding: .5rem 0px;
+
+    * {
+      display: inline-block;
+    }
+
+    label {
+      width: 20%;
+      &.prefix {
+        text-align: right;
+        padding-right: .5rem;
+        box-sizing: border-box;
+      }
+      &.suffix {
+        text-align: left;
+        padding-left: .5rem;
+        box-sizing: border-box;
+      }
+    }
+    input {
+      width: 60%;
+      border: 1px solid #ebebeb;
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: .8rem;
+      background: #f7f7f7;
+    }
+  }
+}
+
+.tlottery-header {
+  .icon {
+    &.helper {
+      width: 2rem;
+      height: 2rem;
+      background: url(../misc/images/tlottery/icon-helper.png);
+      display: inline-block;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      margin-top: -1rem;
+      background-size: 100%;
+    }
+
+    &.cart {
+      width: 2rem;
+      height: 1.8rem;
+      background: url(../misc/images/tlottery/icon-cart.png);
+      display: inline-block;
+      position: absolute;
+      right: 3.5rem;
+      top: 50%;
+      margin-top: -.9rem;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.helpermenu-wrap {
+  position: fixed;
+  top: 3.8rem;
+  z-index: 1111;
+  right: .5rem;
+}
+
+.helpermenu {
+  background: #272c2f;
+  border-radius: 5px;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 .5rem .5rem .5rem;
+    border-color: transparent transparent #272c2f transparent;
+    position: absolute;
+    top: -.5rem;
+    z-index: 111;
+    right: 1rem;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  li {
+    padding: .8rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #667077;
+
+    &:last-child {
+      border-bottom:none;
+    }
+  }
+}
+
+.orange {
+  color: #ff7701;
+}
+
+.tlottery-trend-page {
+  
+  .tlottery-header {
+    
+    h3 {
+      right: 1rem;
+      text-align: right;
+      left: 0px;
+    }
+
+    .lottery-timer {
+      display: inline-block;
+      color: #fff;
+      margin-right: 1rem;
+    }
+  }
+
+  .trend-body {
+    position: fixed;
+    width: 100%;
+    top: 3.7rem + 3rem;
+    overflow: hidden;
+    height: 100%;
+
+    .wrap {
+      width: 200%;
+      @include clearfix;
+      overflow: auto;
+      position: absolute;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      scroll-behavior: smooth;
+
+      .trend-data {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  .trend-header {
+
+    width: 100%;
+    position: fixed;
+    top: 3.7rem;
+    background: #fff;
+
+    &.active-one {
+      ul {
+        &:before {
+          left: 11%;
+        }
+      }
+    }
+
+    &.active-two {
+     ul {
+        &:before {
+          left: 11% + 50%;
+        }
+      } 
+    }
+
+    &.active-three {
+      ul {
+        &:before {
+          left: 19% + 27% + 27%;
+        }
+      }
+    }
+
+    ul {
+      display: table;
+      width: 100%;
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 27%;
+        height: 2px;
+        background: #ee1f3b;
+        left: 19%;
+        bottom: 0px;
+        display: block;
+        position: absolute;
+        transition: all .3s ease;
+      }
+    }
+
+    li {
+      width: 50%;
+      text-align: center;
+      box-sizing: border-box;
+      border-right: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      display: table-cell;
+      vertical-align: middle;
+      height: 3rem;
+
+      span {
+        vertical-align: middle;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      img {
+        vertical-align: middle;
+        width: 1.5rem;
+        margin-right: .2rem;
+      }
+    }
+  }
+
+}
+
+.trend-data {
+  
+  .table-header {
+    ul {
+      border-bottom: 1px solid #dedede;
+      @include clearfix;
+    }
+
+    li {
+      float: left;
+      text-align: center;
+      border-right: 1px solid #dedede;
+      color: #b5b2b0;
+      box-sizing: border-box;
+      height: 3rem;
+      line-height: 3rem;
+
+      &.active {
+        color: #ff7701;
+      }
+
+      &:last-child {
+        border-right: 1px solid #dedede;
+      }
+    }
+  }
+
+  .table-body {
+    @extend .table-header;
+
+    padding-bottom: 6.6rem;
+
+    ul {
+      &:nth-child(odd) {
+        background: #f6f5f1;
+      }
+
+      &:first-child {
+        color: #807467;
+      }
+      color: #c1baac;
+    }
+
+    li {
+      color: inherit;
+
+      &:first-child {
+        width: 3rem;
+      }
+
+      &.selected {
+        span {
+          width: 2rem;
+          height: 2rem;
+          background: #ed314a;
+          border-radius: 50%;
+          display: inline-block;
+          color: #fff;
+          line-height: 2rem;
+        }
+      }
+    }
+
+  }
+}
+
+.trend-data {
+  .table-header {
+    ul.body-header {
+      li {
+        
+        &:first-child {
+          width: 3rem;
+        }  
+      }
+      
+    }
+  }
+}
+
+.trend-last-nums {
+
+  li {
+    
+    color: #666666 !important;
+
+    span {
+      color: #ee1f3b;
+      display: inline-block;
+      margin-right: .5rem;
+    }
+
+    &:nth-child(2) {
+      width: 43%;
+      text-align: center;
+    }
+    &:nth-child(3) {
+      width: 19%;
+    }
+    &:nth-child(4) {
+      width: 19%;
+    }
+
+  }
+}
+
+.chase-body {
+  background-color: #f3f3f3;
+}
+
+.page-chase-page {
+  
+  @mixin content-inner {
+    padding-left: .8rem;
+    padding-right: .8rem;
+  }
+
+  @mixin color-orange {
+    color: #ff7701;
+  }
+
+  .color-orange {
+    @include color-orange;
+  }
+
+  h4 {
+    @include content-inner;
+    @include clearfix;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    span {
+
+      &:nth-child(1) {
+        float: left;  
+      }
+
+      &:nth-child(2) {
+        float: right;
+        @include color-orange;
+      }
+    
+    }
+
+  }
+
+  .chase-plan-actions {
+    text-align: center;
+    margin: 0px 0px .8rem 0px;
+    ul {
+      @include clearfix;
+      border: 1px solid #c5c5c5;
+      border-radius: 5px;
+      display: inline-block;
+      li {
+        width: 80px;
+        float: left;
+        text-align: center;
+        padding: 1rem 0px;
+        color: #666666;
+        box-sizing: border-box;
+        border-right: 1px solid #c5c5c5;
+        &:last-child {
+          border-right: none;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    
+  }
+
+  .form-chase {
+    
+    .field-group {
+      label {
+        vertical-align: middle;
+        color: #666666;
+      }
+
+      input {
+        background: #f7f7f5;
+        text-align: center;
+
+        &.small {
+          display: inline-block;
+          width: 3rem;
+          border: 1px solid #e1e2e2;
+          border-radius: 3px;
+          vertical-align: middle;
+          padding: 3px 0px;
+        }
+
+      }
+
+      i {
+        margin: 0px 5px;
+      }
+
+      .help-text {
+        text-align: center;
+        color: #999999;
+        margin-top: 1rem;
+      }
+
+      margin-bottom: 1rem;
+    }
+
+    @include content-inner;
+
+    .pv-input-wrap {
+      @include clearfix;
+      display: inline-block;
+      box-sizing: border-box;
+      vertical-align: middle;
+
+      span {
+        display: inline-block;
+        background: #ffffff;
+        border: none;
+        font-size: 20px;
+        float: left;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: #9a9898;
+        width: 30px;
+        text-align: center;
+        height: 32px;
+        line-height: 32px;
+
+        &.sub {
+          border-radius: 8px 0px 0px 8px;
+          border-left: 1px solid #e1e2e2;
+          border-top: 1px solid #e1e2e2;
+          border-bottom: 1px solid #e1e2e2;
+          line-height: 27px;
+        }
+
+        &.plus {
+         border-radius: 0px 8px 8px 0px;
+          border-right: 1px solid #e1e2e2;
+          border-top: 1px solid #e1e2e2;
+          border-bottom: 1px solid #e1e2e2;
+          line-height: 28px;
+        }
+      }
+
+      input {
+        height: 32px;
+        line-height: 32px;
+        float: left;
+        padding: 1px 0px;
+        border-top: 1px solid #e1e2e2;
+        border-bottom: 1px solid #e1e2e2;
+        box-sizing: border-box;
+        border-left: none;
+        border-right: none;
+        width: 8rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .checkbox {
+    display: inline-block;
+    margin: 0px 5px;
+  }
+
+  .foot-wrap {
+    .actions {
+      .select-summary {
+        line-height: 100%;
+        font-size: 1.1rem;
+
+        span:first-child {
+          display: inline-block;
+          margin-top: 1rem;
+        }
+
+        span:nth-child(2) {
+          display: block;
+          margin-top: .3rem;
+        }
+      }
+    }
+  }
+
+  .open-info {
+    text-align: center;
+    padding: 8px 10px;
+    background: #fff;
+
+    @include clearfix;
+
+    .timer-wrap {
+      float: left;
+    }
+
+    .hm-link-wrap {
+      float: right;
+    }
+
+    div {
+     
+
+      &.lottery-timer {
+        @include color-orange;
+        margin: 0px 5px;
+      }
+    }
+  }
+}
+
+.chase-tabs {
+
+  .wrap {
+    text-align: center;
+  }
+  
+  ul {
+    margin: 1rem auto;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  li {
+    text-align: center;
+    padding: 13px 24px;
+    font-size: 1.1rem;
+    color: #666666;
+    display: inline-block;
+    border-right: 1px solid #f5f5f5;
+    position: relative;
+
+    &.active {
+      &:after {
+        content: " ";
+        display: block;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        background: #ff7701;
+      }
+    }
+
+    &:last-child {
+      border-right: 0px;
+    }
+  }
+}
+
+.hm-link-wrap {
+  a {
+    color: #ff7701;
+  }
+}
+
+.checkbox {
+
+  position: relative;
+
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 222;
+    visibility: hidden;
+
+    & + label {
+      background: url(../misc/images/checkbox-unselect.png);
+      width: 1.8rem;
+      height: 1.8rem;
+      background-size: 100%;
+      text-indent: 1000rem;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    &:checked + label {
+      background-image: url(../misc/images/checkbox-selected.png);
+    }
+  }
+
+}
+
+.mode-actions {
+
+  @include clearfix;
+
+  display: block;
+  padding: .6rem .8rem;
+  background: #f8f8f8;
+  border-top: 1px solid #ebebeb;
+
+  > div {
+    float: left;
+  }
+  
+  .bs-input {
+    input {
+      width: 5rem;
+      border: 1px solid #eaeaea;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      padding: 0px;
+      outline: none;
+      margin-right: 5px;
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+}
+
+.win-types {
+  li {
+    float: left;
+    padding: 0px;
+    background: #a6a6a6;
+    color: #fff;
+    width: 4rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    box-sizing: border-box;
+
+    &.active {
+      background: #ff7701;
+    }
+
+    &.two-width {
+      width: 8rem;
+      border-radius: 5px !important;
+    }
+
+    &:nth-child(1) {
+      border-radius: 5px 0px 0px 5px;
+    }
+    &:nth-child(2) {
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+}
+
+.mode-types {
+  
+  margin-left: 10px;
+
+  li {
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0px 7px;
+    margin-right: 10px;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #ebebeb;
+
+    &.active {
+      background: #ff7701;
+      color: #fff;
+    }
+
+    &:last-child{
+    }
+  }
+}
+
+.lottery-timer {
+  color: #ff7701;
+}
+
+.rx-pos-wrap {
+
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: .5rem;
+  border-bottom: 1px solid #ebebeb;
+  
+  ul {
+    text-align: center;
+    margin-left: .8rem;
+  }
+
+  li {
+    display: inline-block;
+    padding: .5rem 1.2rem;
+    border: 1px solid #ffc000;
+    border-radius: 3px;
+    color: #ee1f3b;
+    margin-right: .8rem;
+
+    &.active {
+      background: #ffc000;
+      color: #fff;
+      position: relative;
+
+      &:after {
+        content: " ";
+        display: block;
+        background: url(../misc/images/tlottery/icon-ok.png);
+        width: 1rem;
+        height: .8rem;
+        position: absolute;
+        background-size: 100%;
+        top: 10px;
+        right: 2px;
+      }
+    }
+  }
+}
+
+.chase-table {
+
+  padding-bottom: 10rem;
+  
+  &.chase-fb-table {
+      
+      .form {
+        .field-group {
+          margin-right: 5px;
+
+          &.form-action {
+            margin-top: 1rem;
+          }
+        }
+
+        input {
+          width: 2.5rem;
+        }
+      }
+
+  }
+
+  &.chase-lrv-table {
+    .form {
+      
+      input {
+        width: 3rem;
+      }
+
+    }
+  }
+
+  .form {
+    
+    background: #fff;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    .field-group {
+      display: inline-block;
+      margin-right: .3rem;
+    }
+
+    label {
+      font-size: 1.1rem;
+    }
+
+    .input{
+      border: 1px solid #e7e6e6;
+      background: #f3f3f3;
+      width: 5rem;
+      height: 2rem;
+      text-align: center;
+    }
+
+    button {
+      display: inline-block;
+      width: auto;
+      padding: 0px 15px;
+      height: 30px;
+      color: #fff;
+      border-radius: 3px;
+      background: #ff7701;
+      margin-left: .5rem;
+      position: relative;
+      top: 1px;
+    }
+  }
+  
+  table {
+    
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-collapse: collapse; 
+
+    input[type=text] {
+      display: inline-block;
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid #e7e6e6;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+    }
+
+    td {
+      padding: 5px 0px;
+      box-sizing: border-box;
+      text-align: center;
+      border: 1px solid #e6e6e6;
+      border-collapse: collapse; 
+    }
+
+    th {
+      padding: 15px 0px;
+      text-align: center;
+      background: #f3f3f3;
+      color: #7e7e7e;
+      border: 1px solid #e6e6e6;
+      border-collapse: collapse; 
+
+      &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        width: 10%;
+      }
+
+      &:nth-child(4), &:nth-child(5) {
+        width: 15%;
+      }
+
+      &:nth-child(6) {
+        width: 20%;
+      }
+
+      &:nth-child(7) {
+        width: 20%;
+      } 
+
+
+    }
+  }
+
+}
+
+.tlottery-confirm-page {
+  padding-bottom: 5rem;
+}
+
+.color-green {
+  color: #289e38;
+}
+
+.trend-last-nums {
+
+  &.trend-data {
+    .table-header {
+      li  {
+        &:first-child {
+          width: 35%;
+        }
+
+        width: 65%;
+      }
+    }
+  }
+
+}
+
+.random-options {
+  position: absolute;
+  top: -10rem;
+  background: #313439;
+  color: #9a9b9f;
+  left: 1rem;
+  border-radius: 5px;
+
+  &:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #313439 transparent transparent transparent;
+    position: absolute;
+    bottom: -8px;
+    left: 6px;
+  }
+
+  li {
+    padding: 1rem 3rem 1rem 1rem;
+    border-bottom: 1px solid #b8bbc0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+

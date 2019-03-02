@@ -1,0 +1,781 @@
+.clearfix {
+  @include clearfix;
+}
+
+.filter-bar {
+  display: inline-block;
+  color: #fff;
+
+  .filters.hideme {
+    height: 0px;
+    overflow: hidden;
+  }
+
+  .filters {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0px;
+  }
+
+  .inner {
+    position: relative;
+
+    &.viewme {
+      span {
+        &:after {
+          transform: translateY(3px) rotate(0deg);
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+      position: relative;
+      &:after{
+        transition: all .3s linear;
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 42%;
+        right: -1.2rem;
+        border-top: .4rem solid #fff;
+        border-right: .4rem solid transparent;
+        border-left: .4rem solid transparent;
+        border-bottom: none;
+        transform: translateY(5px) rotate(-45deg);
+      }
+      /* &:after {
+        background-image: url(../misc/images/icon-arrow-right-white.png);
+        background-size: .8rem;
+        background-repeat: no-repeat;
+        background-position: right center;
+        position: absolute;
+        content: " ";
+        display: inline-block;
+        width: .8rem;
+        height: .8rem;
+        top: 65%;
+        margin-top: -.5rem;
+        right: -1rem;
+        transform: rotate(45deg);      
+      } */
+    }
+  }
+}
+
+.hgsport-header {
+  text-align: center;
+  background: #bb8233;
+
+  .filter-bar {
+    width: 9.33rem;
+    height: 3.7rem;
+    line-height: 4rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -4.66rem;
+
+    .filters {
+      display: inline-block;
+      position: absolute;
+      top: 3.7rem;
+      width: 100%;
+      left: 0px;
+      z-index: 111;
+      background: #bb8233;
+    }
+
+    .filter-item {
+      border-top: 1px solid #af7932;
+      height: 2.3rem;
+      line-height: 2.5rem;
+
+      &:last-child {
+        // border-bottom: 1px solid #af7932;
+      }
+    }
+  }
+
+
+}
+  
+.hg-page {
+  .page-body {
+    background: #f5f5f5;
+    padding-top: 5.7rem;
+  }
+
+  .icon {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    background-size: 100%;
+  }
+}
+.create-order-page .page-body{
+  padding-top: 3.7rem;
+}
+.hg-page, .raceresult-page{
+  .link-rule{
+    position: absolute;
+    top: .9rem;
+    right: 1.5rem;
+    display: inline-block;
+    width: 1.7rem;
+    height: 1.7rem;
+    background:url(../misc/images/sport/rule_icon.png);
+    background-size: 95%;
+    background-repeat: no-repeat;
+  }
+
+  .shop-cart {
+    @extend .link-rule;
+    background:url(../misc/images/shop-cart.png);
+    overflow: hidden;
+    text-indent: -100rem;
+    right: 4.5rem;
+    background-size: 100%;
+    top: .8rem;
+  }
+}
+ 
+.realtile-ball-group {
+  margin-top: .67rem;
+  background: #fff;
+
+  .title-wrap {
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid #c3c3c3;
+  }
+
+  .title {
+    position: relative;
+    @include clearfix;
+
+    .icon-football {
+      position: absolute;
+      left: 0px;
+      top:0px;
+    }
+
+    .icon-basketball {
+      @extend .icon-football;
+      background-image: url(../misc/images/icon__basketball.png) !important;
+    }
+
+    .icon-arrow-right {
+      background-image: url(../misc/images/icon-arrow-right.png);
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+
+    .icon-arrow-down {
+      @extend .icon-arrow-right;
+      background-image: url(../misc/images/icon-arrow-down.png);
+      width: 1rem;
+      height: 1rem;
+    }
+
+    h3 {
+      margin-left: 1.67rem;
+    }
+
+  }
+  .wrap{
+    padding-bottom: 3rem;
+  }
+}
+
+.icon-football {
+  background-image: url(../misc/images/icon-football.png);
+}
+
+.icon-basketball {
+  background-image: url(../misc/images/icon__basketball.png);
+}
+
+.realtime-ball {
+  .title {
+    background: #fbdc43;
+    padding: .5rem .6rem;
+
+    .misc {
+      span {
+        display: inline-block;
+        margin-right: 0.4rem;
+
+        &.label {
+          color: #d60d02;
+        }
+      }
+    }
+
+    h3 {
+      margin-left: 0px;
+      margin-top: 0.2rem;
+    }
+  }
+
+  .score-board {
+
+    .score-board {
+      width: 100%;
+
+      th, td {
+        border: 1px solid #c3c3c3;
+        height: 2.2rem;
+        text-align: center;
+        vertical-align: middle;
+
+        &[rowspan="3"] {
+          position: relative;
+
+          span {
+            margin-right: 0px;
+            top: 0px;
+            width: 1.5rem;
+            height: 2.2rem;
+            line-height: 2.2rem;
+            right: 0px;
+          }
+
+          span:nth-child(1) {
+            display: inline-block;
+            width: 1rem;
+            line-height: 150%;
+            margin-right: .5rem;
+          }
+
+          span:nth-child(2) {
+            position: absolute;
+            border-left: 1px solid #cacaca;
+          }
+
+          span:nth-child(3) {
+            position: absolute;
+            top: 2.2rem;
+            border-left: 1px solid #cacaca;
+          }
+
+          span:nth-child(4) {
+            position: absolute;
+            top: 4.4rem;
+            border-left: 1px solid #cacaca;
+          }
+
+          i {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    .pink-board {
+      background: #fffcc7;
+    }
+  }
+}
+
+.score-board-items-wrapper {
+  transition: all .3s linear;
+  overflow: hidden;
+  height: auto !important;
+}
+
+.score-board-items-wrapper.hideself {
+  height: 0px !important;
+}
+
+.hgsport-header {
+  h3 {
+    padding-left: 0px;
+    text-align: center;
+    margin-left: 0px;
+    left: 0px;
+  }
+}
+
+.order-info-board {
+  .wrap {
+    padding: 1rem 0rem;
+    background: #dededc;
+  }
+}
+
+.create-order-page.hg-page {
+
+  
+  .user-info {
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    background: #fff;
+    color: #999896;
+
+    span {
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.order-info-panel {
+  
+  border-bottom: .8rem;
+  border-color: #dcdcda;
+  background: #fff;
+  border-style: solid;
+  border-top-right-radius: 25px;
+  .inner-content {
+    .title{
+      
+    }
+  }
+  .title {
+    padding: .5rem 0px .5rem 2.5rem;
+    color: #000;
+  }
+
+  .row {
+    padding: .8rem 0px .8rem 2.5rem;
+  }
+
+  input {
+    text-align: right;
+    padding-right: 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-label {
+    padding: 0.5rem 0px;
+  }
+
+  .form-tip {
+    @include clearfix;
+    color: #a9a9a9;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+}
+
+.btn-hg {
+  background: #bb8233;
+  color: #fff;
+}
+
+#burge-menu-content.is-open {
+  filter: blur(10px);
+}
+
+.hg-buger-items li {
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #9e9e9e;
+  margin-bottom: 1rem;
+
+  &.active {
+    background: #0093dd;
+    border: 1px solid #0093dd;
+  }
+
+  span {
+    color: #fff;
+  }
+}
+
+#burger-menu-wrap {
+
+}
+
+.hg-buger-menu.is-open {
+  .bm-menu-wrap {
+    box-shadow: -9px 0px 5px 2px #373a47;
+  }
+}
+
+.hg-buger-menu {
+
+  .bm-cross-button {
+    left: 0px;
+    background: url(../misc/images/icon-buger-close-btn.png); 
+    background-size: 100%;
+
+    > span {
+      display: none;
+    }
+  }
+}
+
+.red {
+  color: #f00;
+
+  a {
+    color: #f00;
+  }
+}
+
+.rendering {
+  visibility: hidden;
+
+  .hideself {
+    height: auto;
+  }
+}
+
+.hgsport-order-date-picker {
+  
+  margin-top: .8rem;
+
+  .wrap {
+    width: 50%;
+    padding: 0.47rem .5rem;
+    box-sizing: border-box;
+    float: left;
+  }
+}
+
+.warning {
+  text-align: center;
+}
+
+.order-item {
+  .guoguanTitle{
+    tbody{
+      height: 1.5rem;
+      line-height: 1.5rem;
+    }
+  }
+  .pl3-order-detail {
+    .pl3-table-back{
+      background: #eee;
+    }
+    .guogaunList{
+      padding: 0;
+      .table-item{
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    tbody {
+      td:first-child {
+        text-align: center;
+      }
+    }
+
+    > .pl3-table {
+
+      > thead{
+        border:1px solid #aaa;
+        border-top: none;
+      }
+      tbody {
+        border: 1px solid #a9a9a9;
+      }
+      td {
+        border: none;
+      }
+    }
+    .table-item{
+      margin-bottom: .6rem;
+      background: #fff;
+      tbody{
+        border: none;
+      }
+      td{
+        padding-left: 1rem;
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+.timer-stick-wrap {
+  position: fixed;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  background: #bb8233;
+  color: #fff;
+  text-align: center;
+
+  .time-ticker {
+    position: absolute;
+    width: 5rem;
+    height: 2rem;
+    top: 50%;
+    margin-top: -1rem;
+    left: 50%;
+    margin-left: -2.5rem;
+    line-height: 2rem;
+  }
+
+  i {
+    background: url(../misc/images/sport-time-loading.png) no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+  }
+}
+
+.bg-buger-menu-roll {
+  
+  .link-rule {
+    right: 1rem;
+  }
+
+  .bm-burger-button {
+    display: none;
+  }
+}
+
+.hg-bg {
+  // background: #dededc;
+}
+
+.hg-page {
+  .btn-wrap {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .order-info-panel {
+    position: relative;
+    .btn-delete {
+      height:2rem;
+      width: 2rem;
+      display: inline-block;
+      background: url(../misc/images/sport_btn--delete.png);
+      background-size: 94%;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      margin-top: -.7rem;
+    }
+    .row {
+      padding: .4rem 0px .4rem 2.5rem;
+    }
+    .form-label {
+      padding: 0.5rem .5rem .5rem 2.5rem;
+      line-height: 100%;
+    }
+
+    input {
+      padding-right: 1rem;
+      height: 2rem;
+      line-height: 2rem;
+      width: 50%;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #858384;
+      text-align: left;
+      text-indent: 1rem;
+      font-size: 1rem;
+    }
+    .form-tip {
+      line-height: 250%;
+      background: #fff;
+      padding-left: 2.5rem;
+    }
+
+    .form-tip span {
+      margin-right: 2.5rem;
+    }
+  }
+}
+
+.icon-zhu {    
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #b30606;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.icon-ke {    
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #2970f7;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+@keyframes rotate-full {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg); 
+  }
+}
+
+
+@-webkit-keyframes rotate-full {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg); 
+  }
+}
+
+@-ms-keyframes rotate-full {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+
+  100% {
+    -ms-transform: rotate(360deg); 
+  }
+}
+
+@-moz-keyframes rotate-full {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(360deg); 
+  }
+}
+
+.icon-ft-roll {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  background-size: 100%;
+  background-image: url(../misc/images/icon-football.png);
+  animation: rotate-full 2s linear infinite normal;
+  -webkit-animation: rotate-full linear 2s infinite normal;
+  -ms-animation: rotate-full 2s linear infinite normal;
+  -moz-animation: rotate-full 2s linear infinite normal;
+}
+
+.icon-bk-roll {
+  @extend .icon-ft-roll;
+  background-image: url(../misc/images/icon__basketball.png);
+}
+
+.hgsport-header {
+  .filterbal-wrapper {
+    
+    .filter-bar {
+      width: 5.33rem;
+
+      &.center-filter:nth-child(1) {
+        width: 9.33rem;
+        left: 50%;
+      }
+    }
+
+    .filter-bar:nth-child(1) {
+      left: 45%;
+    }
+    .filter-bar:nth-child(2) {
+      left: 65%;
+    }
+  }
+}
+
+.sport-red-card {
+  width: 1rem;
+  height: 1rem;
+  background: #e51410;
+  line-height: 1rem;
+  font-size: 1rem;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+}
+
+@keyframes loading-ss {
+  0% {
+    transform: translateX(-8px);
+  }
+
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+@-webkit-keyframes loading-ss {
+  0% {
+    -webkit-transform: translateX(-8px);
+  }
+
+  100% {
+    -webkit-transform: translateX(8px);
+  }
+}
+
+@-moz-keyframes loading-ss {
+  0% {
+    -moz-transform: translateX(-8px);
+  }
+
+  100% {
+    -moz-transform: translateX(8px);
+  }
+}
+
+.loading-ss {
+  position: relative;
+}
+
+.form-order-title {
+  height: 2rem;
+  line-height: 2rem;
+  background: #fff;
+  margin-bottom: 1rem;
+  text-indent: 2.5rem;
+  font-size: 14px;
+  font-weight: bold;
+  color: #353535;
+}
+
+/* .loading-ss:after {
+    content: "";
+    width: 1rem;
+    display: inline-block;
+    -webkit-animation: loading-ss 1s infinite alternate;
+    -moz-animation: loading-ss 1s infinite alternate;
+    animation: loading-ss 1s infinite alternate;
+    overflow: hidden;
+    position: absolute;
+    right: -2rem;
+    top: .15rem;
+    line-height: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #bb8233;
+} */

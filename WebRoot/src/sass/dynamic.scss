@@ -1,0 +1,293 @@
+$bg_color: #f5f5f5;
+
+.template-type {
+
+  $width: 7.33rem;
+  box-sizing: border-box;
+  padding: .83rem 0px 0px 0px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0px;
+  position: relative;
+
+  &:first-child {
+    padding-top: 0px;
+  }
+
+  h4 {
+    font-size: 1.06rem;
+    color: #1e1e1e;
+    margin-bottom: .5rem;
+    line-height: 120%;
+  }
+
+  p {
+    font-size: .9rem;
+    color: #838383;
+    line-height: 120%;
+  }
+
+  .inner {
+    padding: 0px .4rem;
+    @include clearfix;
+  }
+
+  &.card-template {
+    padding: 0px;
+    
+    .inner {
+      padding-bottom: .5rem;
+      padding-top: .5rem;
+
+      img {
+        float: left;
+        width: $width;
+      }
+
+    }
+
+    .right {
+      margin-left: $width + .8rem;
+    }
+  }
+
+  &.card-light-template {
+    $light_width: 3.33rem;
+    padding: 0px;
+  
+    .inner {
+      padding-right: 2.67rem;
+      position: relative;
+      padding-bottom: .8rem;
+      padding-top: .8rem;
+
+      img {
+        width: $light_width;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: .4rem;
+        height: .73rem;
+        right: .8rem;
+        top: 50%;
+        color: #b3b3b3;
+        margin-right: .37rem;
+        background: url(../misc/images/arrow-icon.png) 100% no-repeat;
+      }
+    }
+
+
+    .right {
+      margin-left: $light_width + .8rem;
+    }
+  }
+
+  &.template-poster {
+    img {
+      width: 100%;
+    }
+
+    .bottom {
+      margin-top: 10px;
+      position: relative;
+
+      i {
+        font-size: 0.9rem;
+        color: #1298d7;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+      }
+    }
+  }
+
+  &.template-avatar {
+
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    padding: .83rem 0px;
+    margin: 0px;
+
+    .avatar-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .inner {
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    i {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: .83rem;
+    }
+  }
+}
+
+.template-type-1 {
+  .template-type {
+    p {
+      font-size: .9rem;
+      color: #838383;
+      line-height: 120%;
+    }
+  }
+}
+
+
+.template-type-6 {
+  
+  @include clearfix;
+
+  background: #fff;
+
+  .template-type {
+    width: 25%;
+    float: left;
+    border-right: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #fff;
+    padding: 0px;
+
+    .inner {
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    i {
+      line-height: 120%;
+    }
+  }
+}
+
+.template-type-5 {
+  background-color: $bg_color;
+
+  .inner {
+    padding: 0px;
+  }
+}
+
+.template-type-4 {
+  padding-bottom: 0px;
+  background-color: $bg_color;  
+
+  .inner {
+    padding: 0px;
+    background: #fff;
+
+    img {
+      border-radius: 6px 6px 0px 0px;
+    }
+
+    h4 {
+      text-indent: .5rem;
+    }
+  }
+
+  .template-type {
+    background-color: #f7f7f7;
+    padding: 0px .5rem .5rem .5rem;
+
+    &:last-child {
+      padding-bottom: 0px;
+    }
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+}
+
+.card-template {
+  border-bottom: 1px solid $bg_color;
+}
+
+.card-light-template {
+  @extend .card-template;
+}
+
+
+.template-type-group {
+  border-top: .83rem solid $bg_color;
+}
+
+.template-type-4 {
+  i {
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: url(../misc/images/arrow-icon-blue.png) 100% no-repeat;
+    }
+  }
+}
+
+
+.template-type-4 {
+  h4 {
+    margin-bottom: .8rem;
+  }
+}
+
+
+.template-type-3 {
+  .template-type.card-light-template .inner img {
+    width: 2.5rem;
+  }
+
+  .template-type.card-light-template .right {
+    margin-left: 3.3rem;
+    position: absolute;
+    height: 1rem;
+    width: calc(100% - 7.3rem);
+    top: 50%;
+    margin-top: -.5rem;
+  }
+
+  .template-type h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+    line-height: 120%;
+  }
+
+  .template-type p {
+    display: none;
+  }
+}
+
+.template-poster {
+  position: relative;
+}
+
+.template-type {
+
+  .image-bg {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+  }
+  
+}
+
+
+

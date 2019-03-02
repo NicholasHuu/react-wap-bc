@@ -1,0 +1,15 @@
+export const REQUEST_LOTTERY_GAMES = 'request lottery games';
+export const REQUEST_LOTTERY_TYPES = 'request lottery types';
+export const REQUEST_OPEN_RESULT = 'request open result';
+export const REQUEST_OPEN_RESULT_DETAIL = 'request open result detail';
+export const REQUEST_LOTTERY_PANKOU = 'request lottery pankou';
+export const REQUEST_LOTTERY_PEIYU = 'request lottery peiyu';
+export const REQUEST_LOTTERY_INFO = 'request lottery info';
+export const TEMP_SAVE_SELECTED_PEIYU = 'temp save selected peiyu';
+export const REQUEST_PREORDER_ITEMS = 'request preorder items';
+export const REQUEST_MULTI_GROUP_ORDER = 'request multi group order';
+export const REQUEST_LOTTERY_ORDER = 'request lottery order';
+export const REQUEST_GROUP_ORDER = 'request group order';
+export const REQUEST_WINNING_LIST = 'request winning list';
+export const REQUEST_GAME_RULE = 'request game rule';
+export const REQUEST_LOTTERY_SLIDER = 'request lottery slider';

@@ -1,0 +1,239 @@
+.mine-page{
+
+  .top-bar-header{
+    text-align: center;
+    background: #b82432;
+  }
+  .btn{
+    text-align: center;
+    color: #fff;
+    border-radius: .4rem;
+  }
+
+  .ball{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    background: red;
+    color: #fff;
+    border-radius: 1rem;
+  }
+
+  .ball-zero{background:#fed300;}
+  .ball-one{background:#0074c5;}
+  .ball-two{background:#605d5c;}
+  .ball-three{background:#f48000;}
+  .ball-four{background:#60bff3;}
+  .ball-five{background:#715d9d;}
+  .ball-six{background:#c1c0bf;}
+  .ball-seven{background:#e40005;}
+  .ball-eight{background:#5c2220;}
+  .ball-nine{background:#6ac334;}
+
+  .ball-hk-red{background: #c63725;}
+  .ball-hk-blue{background: #0075c5;}
+  .ball-hk-green{background: #6ac334;}
+//公共底部
+  .footer-nav{
+    z-index: 11;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #aaa;
+    background: #fff;
+    a{
+      display:block;
+      &:last-child {
+        .item{
+          border-right:0;
+        }
+      }
+    }
+    .item{
+      float: left;
+      width: 33.3333%;
+      height: 3.8rem;
+      border-right: 1px solid #aaa;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: .9rem;
+      span{
+        display: block;
+        width: 2.2rem;
+        height: 2.2rem;
+        margin: .2rem auto .2rem;
+        background-size: 5.2rem;
+      }
+    }
+  }
+  .icon-mine{
+    background:url(../misc/images/lottery/footer-icon-1.png);
+    background-position: -.25rem -.2rem;
+  }
+  .icon-opencenter{
+    background:url(../misc/images/lottery/footer-icon-2.png);
+    background-position: -.25rem -.2rem;
+  }
+  .icon-record{
+    background:url(../misc/images/lottery/footer-icon-3.png);
+    background-position: -.25rem -.2rem;
+  }
+  .active .icon{
+    background-position: -2.84rem -.2rem;
+  }
+//加载更多
+  .load-more-btn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    background:#aaa;
+    border-radius: 0;
+  }
+
+//首页
+  .banner{
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .platform-list-nav{
+    padding-top: 1rem;
+    background: #eee;
+    .item{
+      float: left;
+      width: 25%;
+      padding: 1rem 0;
+      box-sizing: border-box;
+      border-right: 1px solid #aaa;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      background:#fff;
+      text-align: center;
+      span{
+        display: block;
+        width: 3.3rem;
+        height: 3.3rem;
+        margin: .4rem auto;
+        background:red;
+        background: url(../misc/images/lottery/lottery-home-icon.png);
+        background-size: 43rem;
+      }
+      .icon-hk6{
+        background-position: -7.2rem 0;
+      }
+      .icon-fc3d{
+        background-position: 10.5rem 0;
+      }
+      .icon-pl3{
+        background-position: 6.9rem 0;
+      }
+      .icon-cqssc{
+        background-position: -14.4rem 0;
+      }
+      .icon-tjssc{
+        background-position: -18.01rem 0;
+      }
+      .icon-xjssc{
+        background-position: -21.6rem 0;
+      }
+      .icon-gdklsf{
+        background-position: -25.3rem 0;
+      }
+      .icon-tjklsf{
+        background-position: -28.8rem 0;
+      }
+      .icon-bjpk10{
+        background-position: -10.81rem 0;
+      }
+      .icon-bjkl8{
+        background-position: 0 0;
+      }
+      .icon-cakeno{
+        background-position: -3.6rem 0;
+      }
+    }
+  }
+
+//开奖中心
+
+  .open-result-platform{
+    padding-bottom: 4rem;
+    .items{
+      margin-top: 1rem;
+      padding: .6rem 5%;
+      background:#fff;
+    }
+  }
+
+
+//开奖详情
+  .open-result-title{
+    margin-top: 2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    .row-ball{
+      li{
+        float: left;
+      }
+    }
+    .ball-unit{
+      
+    }
+  }
+
+  .open-result-list{
+      li{
+        height: 3rem;
+        padding: 0.8rem 1rem;
+        background: #eee;
+        margin-top: 1rem;
+        text-align: center;
+      }
+  }
+
+
+//投注中心
+  .filter-bar{
+    width: 8rem;
+    line-height: 3.7rem;
+    .filters {
+      z-index: 111;
+      background:#860f1a;
+      .filter-item{
+        line-height: 2.6rem;
+        border-bottom: 1px solid red;
+      }
+    }
+  }
+
+  .nav-bar{
+    .item{
+      float: left;
+      display: inline-block;
+      width: 25%;
+      height: 2rem ;
+      line-height: 2rem;
+      border-bottom: 2px solid #aaa;
+      text-align: center;
+    }
+    .active{
+      color: red;
+      font-weight: 700;
+      border-bottom-color: red; 
+    }
+  }
+  
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,1 @@
+export const REQUEST_RACE_RESULT = 'request race result';
